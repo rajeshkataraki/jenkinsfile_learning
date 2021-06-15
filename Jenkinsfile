@@ -4,7 +4,7 @@ pipeline {
   environment {
     IZ_USER = credentials('5abd0cab-f9dd-4845-837e-b772151efe20')
     SERVER_CREDENTIALS = credentials('server-credentials')
-    VERSION = 1.0.0
+    VERSION = '1.0.0'
   }
   stages {
     
