@@ -21,9 +21,9 @@ pipeline {
     }
     
     stage("test") {
-      when {
-        branch 'master'
-      }
+      //when {
+      //  branch 'master'
+      //}
       when {
         expression {
           params.executeTests
