@@ -36,7 +36,7 @@ pipeline {
     
     stage("deploy") {
       steps {
-        echo 'Deploying the application...'
+        echo 'Deploying the applicationof version ${params.MYVERSION}'
         echo "Deploying with ${IZ_USER}"
         //sh "ls -l"
       }
