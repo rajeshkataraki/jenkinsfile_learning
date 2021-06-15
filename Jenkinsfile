@@ -30,7 +30,7 @@ pipeline {
       steps {
         echo 'Deploying the application...'
         echo "Deploying with ${IZ_USER}"
-        sh "ls -l"
+        //sh "ls -l"
       }
     }
   }
