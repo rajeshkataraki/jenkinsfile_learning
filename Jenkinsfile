@@ -6,6 +6,11 @@ pipeline {
     //SERVER_CREDENTIALS = credentials('server-credentials')
     VERSION = '1.0.0'
   }
+
+  parameters {
+    choice(name: 'MYVERSION', choices: ['1.0.0', '1.2.0', '1.3.0'], description: 'Please choose right version')
+    booleanParam(name: 'executeTests', defaultValue: true, description: 'Execute Tests')
+  }
   stages {
     
     stage("build") {
@@ -17,8 +22,11 @@ pipeline {
     
     stage("test") {
       when {
-        not {
-          branch 'master'
+        branch 'master'
+      }
+      when {
+        expression {
+          params.executeTests
         }
       }
       steps {
